@@ -13,12 +13,12 @@
 \newcommand\runtime{\vspace{.10in}\textbf{Running time: }}
 \pagestyle{fancyplain}
 \lhead{\textbf{\NAME }}
-\chead{\textbf{HW\HWNUM}}
+\chead{\textbf{Module \HWNUM}}
 \rhead{02-713, \today}
 \begin{document}\raggedright
 %Section A==============Change the values below to match your information==================
 \newcommand\NAME{Jonathan Lopez}  % your name
-\newcommand\HWNUM{1}              % the homework number
+\newcommand\HWNUM{3}              % the homework number
 %Section B==============Put your answers to the questions below here=======================
 
 
@@ -26,24 +26,98 @@
 \question{3.4.4}
 {For persons infected with a certain form of malaria, the length of time spent in
 remission is described by the continuous pdf 
-$f \gamma (y) = \frac{1}{9}y^{2},0 \leq y \leq 3$
+$f_{\gamma} (y) = \frac{1}{9}y^{2},0 \leq y \leq 3$
 , where $Y$ is measured in years. What is the probability that a malaria patient's
 remission lasts longer than one year?}
 
 
 \question{3.4.6}
+{Let $n$ be a positive integer. Show that
+$f_{\gamma} (y) = (n+2)(n+1)y^{n}(1-y),0 \leq y \leq 1$
+, is a pdf.}
+
+
 \question{3.4.12}
+{The cdf for a random variable $Y$ is defined by \\
+$F_{\gamma} (y) = 0$ for $y < 0$ ;\\
+$F_{\gamma} (y) = 4y^{3}-3y^{4}$ for $0 \leq y \leq 1$; and \\
+$F_{\gamma} (y) = 1$ for $y > 1$.\\
+Find 
+$P(\frac{1}{4} \leq Y \leq \frac{3}{4})$
+by integrating $f_{\gamma} (y)$.
+}
+
+
 \question{3.5.8}
-\part{a}
-\part{d}
+{Calcuate $E(Y)$ for the following pdf:}
+
+\part{a}$f_{\gamma} (y) = 3(1-y)^{2}, 0 \leq y \leq 1$
+\\
+\part{d}$f_{\gamma} (y) = \sin y, 0 \leq y \leq \frac{\pi}{2}$
+
+
 \question{3.5.11}
+{Show that the expected value associated with the exponential distribution,
+$f_{\gamma} (y) = \lambda e^{- \lambda y},y > 0$
+, is $\frac{1}{\lambda}$, where $\lambda$ is a positive constant.}
+
+
 \question{3.5.14}
+{Suppose that fifteen observations are chosen at random from the pdf 
+$f_{\gamma} (y) = 3y^{2}, 0 \leq y \leq 1$
+. Let $X$ denote the umber that lie in the interval 
+$(\frac{1}{2}, 1)$. Find $E(X)$.}
+
+
 \question{3.5.27}
+{Find the median for each of the following pdfs:}
+
+\part{a} $f_{\gamma} (y) = (\theta + 1)y^{\theta}, 0 \leq y \leq 1$, where $\theta > 0$
+\\ 
+\part{b} $f_{\gamma} (y) = y + \frac{1}{2}, 0 \leq y \leq 1$, where $\theta > 0$
+
+
 \question{3.5.32}
+{A box is to be constructed so that its height is five inches and its base is
+$Y$ inches by $Y$ inches, where $Y$ is a random variable described by the pdf,
+$f_{\gamma}(y) = 6y(1-y),0 < y < 1$
+. Find the expected volume of the box.}
+
+
 \question{3.5.34}
+{If $Y$ has the probability density function 
+$f_{\gamma} (y) = 2y, 0 \leq y \leq 1$
+then $E(Y) = \frac{2}{3}$. Define the random variable $W$ to be the squared deviation
+of $Y$ from its mean, that is, $W = (Y-\frac{2}{3})^{2}$. Find $E(W)$.}
+
+
 \question{3.6.2}
+{Find the variance of $Y$ if 
+\[
+    f_{\gamma} (y) =
+        \begin{cases}
+            \frac{3}{4}, 0, \leq y \leq 1 \\
+            \frac{1}{4}, 2, \leq y \leq 3 \\
+            0, elsewhere \\
+        \end{cases}
+\]}
+
+
 \question{3.6.8}
+{Consider the pdf defined by 
+    \[
+        f_{\gamma}(y) = \frac{2}{y^{3}}, y \geq 1
+    \]
+Show that \\
+$(a) \int_{1}^{\infty} f_{\gamma}(y) dy = 1$, \\
+$(b) E(Y) = 2$, and \\
+$(c) Var(Y)$ is not finite.
+}
+
+
 \question{3.6.21}
+{Calculate the coefficient of kurtosis for a uniform random variable defined
+over the unit interval, $f_{\gamma}(y) = 1$, for $0 \leq y \leq 1$. }
 
 
 
