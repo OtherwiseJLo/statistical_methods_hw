@@ -28,13 +28,28 @@
 remission is described by the continuous pdf 
 $f_{\gamma} (y) = \frac{1}{9}y^{2},0 \leq y \leq 3$
 , where $Y$ is measured in years. What is the probability that a malaria patient's
-remission lasts longer than one year?}
+remission lasts longer than one year?} \\
+$
+P(Y \geq 1) 
+= 
+\int_{1}^{3}f_{\gamma}(y)dt 
+= 
+\frac{1}{27}y^{3} \Big|_{1}^{3}
+=
+\frac{1}{27}(3)^{3}-\frac{1}{27}(1)^{3}
+=
+1 - \frac{1}{27}
+=
+\frac{26}{27}
+$
 
 
 \question{3.4.6}
 {Let $n$ be a positive integer. Show that
-$f_{\gamma} (y) = (n+2)(n+1)y^{n}(1-y),0 \leq y \leq 1$
-, is a pdf.}
+\\
+$f_{\gamma} (y) = (n+2)(n+1)y^{n}(1-y),0 \leq y \leq 1$,
+\\
+is a pdf.}
 
 
 \question{3.4.12}
@@ -46,7 +61,23 @@ Find
 $P(\frac{1}{4} \leq Y \leq \frac{3}{4})$
 by integrating $f_{\gamma} (y)$.
 }
-
+\\
+$
+P(\frac{1}{4} \leq Y \leq \frac{3}{4})
+=
+\int_{\frac{1}{4}}^{\frac{3}{4}}4y^{3}-3y^{4}dt
+=
+y^{4}-\frac{3}{5}y^{5} \Big|_{\frac{1}{4}}^{\frac{3}{4}}
+=
+\Big[(\frac{3}{4})^4-\frac{3}{5}(\frac{3}{4})^{5}\Big]
+-
+\Big[(\frac{1}{4})^4-\frac{3}{5}(\frac{1}{4})^{5}\Big]
+$
+\\
+$
+P(\frac{1}{4} \leq Y \leq \frac{3}{4}) 
+= 
+$
 
 \question{3.5.8}
 {Calcuate $E(Y)$ for the following pdf:}
