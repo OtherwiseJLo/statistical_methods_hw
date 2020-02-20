@@ -30,13 +30,13 @@ $f_{\gamma} (y) = \frac{1}{9}y^{2},0 \leq y \leq 3$
 , where $Y$ is measured in years. What is the probability that a malaria patient's
 remission lasts longer than one year?} \\
 $
-P(Y \geq 1) 
+P(Y > 1) 
 = 
-\int_{1}^{3}f_{\gamma}(y)dt 
+1 - \int_{0}^{1}f_{\gamma}(y)dt 
 = 
-\frac{1}{27}y^{3} \Big|_{1}^{3}
+1 - \Big(\frac{1}{27}y^{3} \Big|_{0}^{1}\Big)
 =
-\frac{1}{27}(3)^{3}-\frac{1}{27}(1)^{3}
+1 - \Big(\frac{1}{27}(1)^{3}-\frac{1}{27}(0)^{3}\Big)
 =
 1 - \frac{1}{27}
 =
@@ -44,12 +44,12 @@ P(Y \geq 1)
 $
 
 
-\question{3.4.6}
-{Let $n$ be a positive integer. Show that
-\\
-$f_{\gamma} (y) = (n+2)(n+1)y^{n}(1-y),0 \leq y \leq 1$,
-\\
-is a pdf.}
+% \question{3.4.6}
+% {Let $n$ be a positive integer. Show that
+% \\
+% $f_{\gamma} (y) = (n+2)(n+1)y^{n}(1-y),0 \leq y \leq 1$,
+% \\
+% is a pdf.}
 
 
 \question{3.4.12}
@@ -76,7 +76,7 @@ $
 \\
 $
 P(\frac{1}{4} \leq Y \leq \frac{3}{4}) 
-= 
+= 0.1740 - 0.0033 = 0.1707
 $
 
 \question{3.5.8}
@@ -84,72 +84,162 @@ $
 
 \part{a}$f_{\gamma} (y) = 3(1-y)^{2}, 0 \leq y \leq 1$
 \\
+$
+\int 3y(1-y)^{2}dy 
+= 
+\int 3y(1 - 2y + y^{2})dy
+=
+\int 3y - 6y^{2} + 3y^{3} dy
+=
+\frac{3y^{2}}{2} - 2y^{3} + \frac{3y^{4}}{4}
+$
+\\
+$
+\int_{0}^{1} 3y(1-y)^{2}dy 
+=
+\frac{3y^{2}}{2} - 2y^{3} + \frac{3y^{4}}{4} \Big|_{0}^{1}
+=
+\frac{3}{2} + \frac{3}{4} - 2 = \frac{1}{4}
+$
+\\ 
 \part{d}$f_{\gamma} (y) = \sin y, 0 \leq y \leq \frac{\pi}{2}$
+\\
+$
+\int y \sin y dy 
+= 
+-y\cos y - \int - \cos y dy
+=
+-y \cos y + \sin y
+$
+\\
+$
+\int_{0}^{\frac{\pi}{2}} y \sin y dy 
+=
+-y \cos y + \sin y \Big|_{0}^{\frac{\pi}{2}}
+=
+1
+$
 
 
 \question{3.5.11}
 {Show that the expected value associated with the exponential distribution,
 $f_{\gamma} (y) = \lambda e^{- \lambda y},y > 0$
 , is $\frac{1}{\lambda}$, where $\lambda$ is a positive constant.}
-
-
-\question{3.5.14}
-{Suppose that fifteen observations are chosen at random from the pdf 
-$f_{\gamma} (y) = 3y^{2}, 0 \leq y \leq 1$
-. Let $X$ denote the umber that lie in the interval 
-$(\frac{1}{2}, 1)$. Find $E(X)$.}
-
-
-\question{3.5.27}
-{Find the median for each of the following pdfs:}
-
-\part{a} $f_{\gamma} (y) = (\theta + 1)y^{\theta}, 0 \leq y \leq 1$, where $\theta > 0$
-\\ 
-\part{b} $f_{\gamma} (y) = y + \frac{1}{2}, 0 \leq y \leq 1$, where $\theta > 0$
-
-
-\question{3.5.32}
-{A box is to be constructed so that its height is five inches and its base is
-$Y$ inches by $Y$ inches, where $Y$ is a random variable described by the pdf,
-$f_{\gamma}(y) = 6y(1-y),0 < y < 1$
-. Find the expected volume of the box.}
-
-
-\question{3.5.34}
-{If $Y$ has the probability density function 
-$f_{\gamma} (y) = 2y, 0 \leq y \leq 1$
-then $E(Y) = \frac{2}{3}$. Define the random variable $W$ to be the squared deviation
-of $Y$ from its mean, that is, $W = (Y-\frac{2}{3})^{2}$. Find $E(W)$.}
-
-
-\question{3.6.2}
-{Find the variance of $Y$ if 
-\[
-    f_{\gamma} (y) =
-        \begin{cases}
-            \frac{3}{4}, 0, \leq y \leq 1 \\
-            \frac{1}{4}, 2, \leq y \leq 3 \\
-            0, elsewhere \\
-        \end{cases}
-\]}
-
-
-\question{3.6.8}
-{Consider the pdf defined by 
-    \[
-        f_{\gamma}(y) = \frac{2}{y^{3}}, y \geq 1
-    \]
-Show that \\
-$(a) \int_{1}^{\infty} f_{\gamma}(y) dy = 1$, \\
-$(b) E(Y) = 2$, and \\
-$(c) Var(Y)$ is not finite.
-}
-
-
-\question{3.6.21}
-{Calculate the coefficient of kurtosis for a uniform random variable defined
-over the unit interval, $f_{\gamma}(y) = 1$, for $0 \leq y \leq 1$. }
+\\
+$
+E(Y) = \int_{0}^{\infty} y \lambda e^{- \lambda y} dy
+$
+\\
+$
+\int y \lambda e^{ - \lambda y} dy 
+= 
+\lambda \int y e^{- \lambda y} dy
+$
+\\
+$
+u = - \lambda y, y = -\frac{u}{\lambda},\frac{du}{dy} = - \lambda, du = - \lambda dy
+$
+\\
+$
+\lambda \int y e^{- \lambda y} dy 
+= 
+\lambda \int -\frac{y e^{u}}{\lambda}du
+=
+\lambda \int -\frac{e^{u}}{\lambda}(-\frac{u}{\lambda})du
+=
+\lambda \frac{1}{\lambda^{2}} \int e^{u}udu
+$
+\\
+$
+\int e^{u}udu = ue^{u} - \int e^{u}du
+=
+- \lambda y e^{- \lambda y} - e^{- \lambda y}
+$
+\\
+$
+\int y \lambda e^{ - \lambda y} dy 
+=
+\frac{1}{\lambda} \Big(- \lambda y e^{- \lambda y} - e^{- \lambda y}\Big)
+=
+-ye^{ - \lambda y} - \frac{e^{- \lambda y}}{\lambda}
+$
+\\
+$
+E(Y)
+=
+-ye^{ - \lambda y} - \frac{e^{- \lambda y}}{\lambda} \Big |_{0}^{\infty}
+=
+\Big[\lim_{y\to\infty} 
+-ye^{ - \lambda y} - \frac{e^{- \lambda y}}{\lambda} \Big]
+-
+\Big[
+    -0e^{ - \lambda 0} - \frac{e^{- \lambda 0}}{\lambda}
+\Big]
+$
+\\
+$
+E(Y) = 0 - (-\frac{1}{\lambda}) = \frac{1}{\lambda}
+$
 
 
 
+% \question{3.5.14}
+% {Suppose that fifteen observations are chosen at random from the pdf 
+% $f_{\gamma} (y) = 3y^{2}, 0 \leq y \leq 1$
+% . Let $X$ denote the umber that lie in the interval 
+% $(\frac{1}{2}, 1)$. Find $E(X)$.}
+% 
+% 
+% \question{3.5.27}
+% {Find the median for each of the following pdfs:}
+% 
+% \part{a} $f_{\gamma} (y) = (\theta + 1)y^{\theta}, 0 \leq y \leq 1$, where $\theta > 0$
+% \\ 
+% \part{b} $f_{\gamma} (y) = y + \frac{1}{2}, 0 \leq y \leq 1$, where $\theta > 0$
+% 
+% 
+% \question{3.5.32}
+% {A box is to be constructed so that its height is five inches and its base is
+% $Y$ inches by $Y$ inches, where $Y$ is a random variable described by the pdf,
+% $f_{\gamma}(y) = 6y(1-y),0 < y < 1$
+% . Find the expected volume of the box.}
+% 
+% 
+% \question{3.5.34}
+% {If $Y$ has the probability density function 
+% $f_{\gamma} (y) = 2y, 0 \leq y \leq 1$
+% then $E(Y) = \frac{2}{3}$. Define the random variable $W$ to be the squared deviation
+% of $Y$ from its mean, that is, $W = (Y-\frac{2}{3})^{2}$. Find $E(W)$.}
+% 
+% 
+% \question{3.6.2}
+% {Find the variance of $Y$ if 
+% \[
+%     f_{\gamma} (y) =
+%         \begin{cases}
+%             \frac{3}{4}, 0, \leq y \leq 1 \\
+%             \frac{1}{4}, 2, \leq y \leq 3 \\
+%             0, elsewhere \\
+%         \end{cases}
+% \]}
+% 
+% 
+% \question{3.6.8}
+% {Consider the pdf defined by 
+%     \[
+%         f_{\gamma}(y) = \frac{2}{y^{3}}, y \geq 1
+%     \]
+% Show that \\
+% $(a) \int_{1}^{\infty} f_{\gamma}(y) dy = 1$, \\
+% $(b) E(Y) = 2$, and \\
+% $(c) Var(Y)$ is not finite.
+% }
+% 
+% 
+% \question{3.6.21}
+% {Calculate the coefficient of kurtosis for a uniform random variable defined
+% over the unit interval, $f_{\gamma}(y) = 1$, for $0 \leq y \leq 1$. }
+% 
+% 
+% 
 \end{document}
