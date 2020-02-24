@@ -44,12 +44,12 @@ P(Y > 1)
 $
 
 
-% \question{3.4.6}
-% {Let $n$ be a positive integer. Show that
-% \\
-% $f_{\gamma} (y) = (n+2)(n+1)y^{n}(1-y),0 \leq y \leq 1$,
-% \\
-% is a pdf.}
+\question{3.4.6}
+{Let $n$ be a positive integer. Show that
+\\
+$f_{\gamma} (y) = (n+2)(n+1)y^{n}(1-y),0 \leq y \leq 1$,
+\\
+is a pdf.}
 
 
 \question{3.4.12}
@@ -183,63 +183,77 @@ $
 
 
 
-% \question{3.5.14}
-% {Suppose that fifteen observations are chosen at random from the pdf 
-% $f_{\gamma} (y) = 3y^{2}, 0 \leq y \leq 1$
-% . Let $X$ denote the umber that lie in the interval 
-% $(\frac{1}{2}, 1)$. Find $E(X)$.}
-% 
-% 
-% \question{3.5.27}
-% {Find the median for each of the following pdfs:}
-% 
-% \part{a} $f_{\gamma} (y) = (\theta + 1)y^{\theta}, 0 \leq y \leq 1$, where $\theta > 0$
-% \\ 
-% \part{b} $f_{\gamma} (y) = y + \frac{1}{2}, 0 \leq y \leq 1$, where $\theta > 0$
-% 
-% 
-% \question{3.5.32}
-% {A box is to be constructed so that its height is five inches and its base is
-% $Y$ inches by $Y$ inches, where $Y$ is a random variable described by the pdf,
-% $f_{\gamma}(y) = 6y(1-y),0 < y < 1$
-% . Find the expected volume of the box.}
-% 
-% 
-% \question{3.5.34}
-% {If $Y$ has the probability density function 
-% $f_{\gamma} (y) = 2y, 0 \leq y \leq 1$
-% then $E(Y) = \frac{2}{3}$. Define the random variable $W$ to be the squared deviation
-% of $Y$ from its mean, that is, $W = (Y-\frac{2}{3})^{2}$. Find $E(W)$.}
-% 
-% 
-% \question{3.6.2}
-% {Find the variance of $Y$ if 
-% \[
-%     f_{\gamma} (y) =
-%         \begin{cases}
-%             \frac{3}{4}, 0, \leq y \leq 1 \\
-%             \frac{1}{4}, 2, \leq y \leq 3 \\
-%             0, elsewhere \\
-%         \end{cases}
-% \]}
-% 
-% 
-% \question{3.6.8}
-% {Consider the pdf defined by 
-%     \[
-%         f_{\gamma}(y) = \frac{2}{y^{3}}, y \geq 1
-%     \]
-% Show that \\
-% $(a) \int_{1}^{\infty} f_{\gamma}(y) dy = 1$, \\
-% $(b) E(Y) = 2$, and \\
-% $(c) Var(Y)$ is not finite.
-% }
-% 
-% 
-% \question{3.6.21}
-% {Calculate the coefficient of kurtosis for a uniform random variable defined
-% over the unit interval, $f_{\gamma}(y) = 1$, for $0 \leq y \leq 1$. }
-% 
-% 
-% 
+\question{3.5.14}
+{Suppose that fifteen observations are chosen at random from the pdf 
+$f_{\gamma} (y) = 3y^{2}, 0 \leq y \leq 1$
+. Let $X$ denote the umber that lie in the interval 
+$(\frac{1}{2}, 1)$. Find $E(X)$.}
+\\
+$
+\int_{\frac{1}{2}}^{1} 3 y^{3} dy 
+=
+\frac{3y^{4}}{4} \big |_{\frac{1}{2}}^{1}
+=
+\frac{1}{4} - \frac{3(\frac{1}{2})^{4}}{4}
+=
+\frac{1}{4} - \frac{3}{64}
+=
+1 - \frac{1}{8}
+=
+\frac{7}{8}
+$
+
+
+\question{3.5.27}
+{Find the median for each of the following pdfs:}
+
+\part{a} $f_{\gamma} (y) = (\theta + 1)y^{\theta}, 0 \leq y \leq 1$, where $\theta > 0$
+\\ 
+\part{b} $f_{\gamma} (y) = y + \frac{1}{2}, 0 \leq y \leq 1$, where $\theta > 0$
+
+
+\question{3.5.32}
+{A box is to be constructed so that its height is five inches and its base is
+$Y$ inches by $Y$ inches, where $Y$ is a random variable described by the pdf,
+$f_{\gamma}(y) = 6y(1-y),0 < y < 1$
+. Find the expected volume of the box.}
+
+
+\question{3.5.34}
+{If $Y$ has the probability density function 
+$f_{\gamma} (y) = 2y, 0 \leq y \leq 1$
+then $E(Y) = \frac{2}{3}$. Define the random variable $W$ to be the squared deviation
+of $Y$ from its mean, that is, $W = (Y-\frac{2}{3})^{2}$. Find $E(W)$.}
+
+
+\question{3.6.2}
+{Find the variance of $Y$ if 
+\[
+    f_{\gamma} (y) =
+        \begin{cases}
+            \frac{3}{4}, 0, \leq y \leq 1 \\
+            \frac{1}{4}, 2, \leq y \leq 3 \\
+            0, elsewhere \\
+        \end{cases}
+\]}
+
+
+\question{3.6.8}
+{Consider the pdf defined by 
+    \[
+        f_{\gamma}(y) = \frac{2}{y^{3}}, y \geq 1
+    \]
+Show that \\
+$(a) \int_{1}^{\infty} f_{\gamma}(y) dy = 1$, \\
+$(b) E(Y) = 2$, and \\
+$(c) Var(Y)$ is not finite.
+}
+
+
+\question{3.6.21}
+{Calculate the coefficient of kurtosis for a uniform random variable defined
+over the unit interval, $f_{\gamma}(y) = 1$, for $0 \leq y \leq 1$. }
+
+
+
 \end{document}
