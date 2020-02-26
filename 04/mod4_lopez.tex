@@ -4,6 +4,8 @@
 \graphicspath{{./}}
 \usepackage[margin=1in]{geometry}
 \usepackage{fancyhdr}
+\usepackage{listings}
+\lstset{language=R}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{5pt plus 1pt}
 \setlength{\headheight}{13.6pt}
@@ -107,6 +109,22 @@ P(Y_{1}' < 0.6 < Y_{5}')
 =
 0.5535
 $
+\\
+Simulation:
+\\
+\begin{lstlisting}
+prob_3_10_4 <- function(trials) {
+    results = integer(trials)
+    for(i in 1:trials){
+        u = runif(5)
+        y_inv = sort(sqrt(u)) # Inverse of y^2
+        if(y_inv[1]<0.6 && y_inv[5]>0.6){
+            results[i]=1
+        }
+    }
+    mean(results)
+}
+\end{lstlisting}
 
 
 \question{3.10.6}
@@ -158,6 +176,26 @@ F_{Y_{1}'}(y)
 $
 \\
 \emph{n=8}
+\\
+Simulation:
+\\
+\begin{lstlisting}
+ prob_3_10_6 <- function(trials) {
+    for(n in 1:20) {
+        results = integer(trials)
+        for (i in 1:trials) {
+            u = runif(n)
+            y_inv = sort(-log(u)) # Inverse of e^-y
+            if (y_inv[1] < 0.2) {
+                results[i] = 1
+            }
+            if (mean(results) > 0.9) {
+                return(n)
+            }
+        }
+    }
+}
+\end{lstlisting}
 
 
 \question{3.10.8}
@@ -182,23 +220,33 @@ $f_{Y}(y)$
 . What is the probability that the last observation recorded will be the smallest
 number in the entire sample?}
 \\
-$
-P(Y_{n} = Y_{1}')
-$
+Sample Space: $n!$ ways
+\\
+nth observation is smallest: $(n-1)!$ ways
+\\
+P(Last Observation is Smallest Observation) = $\frac{(n-1)!}{n!} = \frac{1}{n}$
 
 
-\question{3.10.12}
-{Consider a system containing $n$ components, where the lifetimes of the 
-components are inependent random variables and each has pdf
-$f_{Y}(y) = \lambda e^{- \lambda y}, y > 0$
-. Show that the average time elapsing before the first component failure occurs
-is $1/n \lambda $.}
+% \question{3.10.12}
+% {Consider a system containing $n$ components, where the lifetimes of the 
+% components are inependent random variables and each has pdf
+% $f_{Y}(y) = \lambda e^{- \lambda y}, y > 0$
+% . Show that the average time elapsing before the first component failure occurs
+% is $1/n \lambda $.}
 
 
 \question{3.12.4}
 {Find the moment-generating function for the discrete random variable $X$
 whose probability function is given by
-$p_{x}(k) = (\frac{3}{4})^{4}(\frac{1}{4}), k = 0,1,2...$}
+$p_{x}(k) = (\frac{3}{4})^{k}(\frac{1}{4}), k = 0,1,2...$}
+\\
+$
+M_{X}(t) 
+= 
+\sum_{k=1}^{\infty} e^{tk}(\frac{3}{4})^{k}(\frac{1}{4})
+=
+\frac{1}{4} \sum_{k=1}^{\infty} e^{tk}(\frac{3}{4})^{k}
+$
 
 
 \question{3.12.7}
@@ -209,12 +257,18 @@ Find the moment-generating function for a Poisson function for a Poisson
 random variable. Recall that
 \\
 $e^{r}=\sum_{k=0}^{\infty}\frac{r^{k}}{k!}$}
+\\
+$
+M_{X}(t) 
+= 
+e^{\lambda(e^{t}-1)}
+$
 
 
-\question{3.12.10}
-{Find $E(Y^{4})$ if $Y$ is an exponential random variable with
-$f_{Y}(y) = \lambda e^{- \lambda y}, y>0$
-.}
+% \question{3.12.10}
+% {Find $E(Y^{4})$ if $Y$ is an exponential random variable with
+% $f_{Y}(y) = \lambda e^{- \lambda y}, y>0$
+% .}
 
 
 \question{3.12.23}
@@ -224,8 +278,11 @@ $p_{x}(k) = e^{-\lambda}\lambda^{k}/k!,k=0,1,...$}
 \part{a}
 {Does the random variable $W = 3X$ hava a Poisson distribution?}
 \\ 
+No
+\\
 \part{b}
 {Does the random variable $W = 3X+1$ hava a Poisson distribution?}
-
+\\
+No
 
 \end{document}
