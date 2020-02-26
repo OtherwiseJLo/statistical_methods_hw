@@ -1,6 +1,7 @@
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
+\graphicspath{{./}}
 \usepackage[margin=1in]{geometry}
 \usepackage{fancyhdr}
 \setlength{\parindent}{0pt}
@@ -71,13 +72,22 @@ $
 $
 P(Y_{1}' < 0.6 < Y_{5}')
 =
-P(Y_{1}' \geq 0.6) + P(Y_{5}' \leq 0.6)
+[1-P(Y_{1}' \geq 0.6)] * [1-P(Y_{5}' \leq 0.6)]
 $
 \\
 $
 P(Y_{1}' \geq 0.6) 
 =
 \int_{0.6}^{1} y^{10} - 5y^{8} + 10y^{6} - 10y^{4} + 5y^{2} \ dt
+=
+\frac{y^{11}}{11} - 
+\frac{5y^{9}}{9} + 
+\frac{10y^{7}}{7} - 
+\frac{10y^{5}}{5} + 
+\frac{5y^{3}}{3}
+\big |_{0.6}^{1}
+=
+0.3913
 $
 \\
 $
@@ -87,6 +97,15 @@ P(Y_{5}' \leq 0.6)
 =
 \frac{y^{11}}{11} \big |_{0}^{0.6}
 =
+0.0906
+$
+\\
+$
+P(Y_{1}' < 0.6 < Y_{5}')
+=
+[1- 0.3913] * [1-0.0906]
+=
+0.5535
 $
 
 
@@ -149,15 +168,12 @@ $Y_{2}$, $Y_{1}'$, and $Y_{5}'$.}
 \\
 $
 Y_{2} = y^{2}
-$
-\\
-$
+\ \ \ \ \ \ \ \ \ \ \ 
 Y_{1}' = y^{10} - 5y^{8} + 10y^{6} - 10y^{4} + 5y^{2}
-$
-\\
-$
+\ \ \ \ \ \ \ \ \ \ \ 
 Y_{5}' = y^{10}
 $
+\includegraphics[scale=0.5]{rplot}
 
 
 \question{3.10.10}
