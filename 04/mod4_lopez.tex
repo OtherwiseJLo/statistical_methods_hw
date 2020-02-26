@@ -25,37 +25,156 @@
 
 \question{3.10.4}
 {A random sample of size 5 is drawn from the pdf
-    $f_{\gamma}(y)=2y, 0 \leq y \leq 1$
+    $f_{Y}(y)=2y, 0 \leq y \leq 1$
 . Calculate
-$P(Y_{1}' < 0.6 < Y_{5}'$
+$P(Y_{1}' < 0.6 < Y_{5}')$
 . \emph{Hint.} Consider the complement.}
+\\
+$
+F_{Y}(y) 
+=
+\int_{0}^{y} 2y\ dy
+=
+y^{2} \big |_{0}^{y}
+=
+y^{2}
+$
+\\
+$
+f_{Y_{1}'}(y)
+=
+5[1-y^{2}]^{4} \ 2y
+=
+10y^{9} - 40y^{7} + 60y^{5} - 40y^{3} + 10y
+$
+\\
+$
+F_{Y_{1}'}
+=
+y^{10} - 5y^{8} + 10y^{6} - 10y^{4} + 5y^{2}
+$
+\\
+$
+f_{Y_{5}'}(y)
+=
+5[y^{2}]^{4} \ 2y
+=
+10y^9
+$
+\\
+$
+F_{Y_{5}'}
+=
+y^{10}
+$
+\\
+$
+P(Y_{1}' < 0.6 < Y_{5}')
+=
+P(Y_{1}' \geq 0.6) + P(Y_{5}' \leq 0.6)
+$
+\\
+$
+P(Y_{1}' \geq 0.6) 
+=
+\int_{0.6}^{1} y^{10} - 5y^{8} + 10y^{6} - 10y^{4} + 5y^{2} \ dt
+$
+\\
+$
+P(Y_{5}' \leq 0.6)
+=
+\int_{0}^{0.6} y^{10} \ dt
+=
+\frac{y^{11}}{11} \big |_{0}^{0.6}
+=
+$
 
 
 \question{3.10.6}
 {Let $Y_{1}$,$Y_{2}$,...,$Y_{n}$, be a random sample from the exponential pdf
-$f_{\gamma}(y_ = e^{-y},y \geq 0$.What is the smallest $n$ for which
+$f_{Y}(y) = e^{-y},y \geq 0$.What is the smallest $n$ for which
 $P(Y_{min} < 0.2) > 0.9$?
 }
+\\
+$
+F_{Y}(y) 
+=
+\int_{0}^{y} e^{-y} \ dt
+=
+-e^{-y} \big |_{0}^{y}
+=
+1 -e^{-y}
+$
+\\
+$
+f_{Y_{1}'}(y)
+=
+n[1-(1-e^{-y}]^{n-1} \ e^{-y}
+=
+ne^{y(2-n)}
+$
+\\
+$
+F_{Y_{1}'}(y)
+=
+\int_{0}^{0.2} ne^{y(2-n)} dy
+=
+\frac{ne^{y(2-n)}}{2-n} \big |_{0}^{0.2}
+=
+\frac{ne^{0.2(n-2)} - n}{2-n} 
+$
+\\
+$
+n=7,
+F_{Y_{1}'}(y)
+=
+0.885
+$
+\\
+$
+n=8,
+F_{Y_{1}'}(y)
+=
+0.932
+$
+\\
+\emph{n=8}
 
 
 \question{3.10.8}
 {A random sample of size $n = 5$ is drawn from the pdf
-$f_{\gamma}(y) = 2y, 0 \leq y \leq 1$.
+$f_{Y}(y) = 2y, 0 \leq y \leq 1$.
 On the same set of axes, graph the pdf for
 $Y_{2}$, $Y_{1}'$, and $Y_{5}'$.}
+\\
+$
+Y_{2} = y^{2}
+$
+\\
+$
+Y_{1}' = y^{10} - 5y^{8} + 10y^{6} - 10y^{4} + 5y^{2}
+$
+\\
+$
+Y_{5}' = y^{10}
+$
 
 
 \question{3.10.10}
 {Suppose that n observations are chosen at random from a continuous pdf
-$f_{\gamma}(y)$
+$f_{Y}(y)$
 . What is the probability that the last observation recorded will be the smallest
 number in the entire sample?}
+\\
+$
+P(Y_{n} = Y_{1}')
+$
 
 
 \question{3.10.12}
 {Consider a system containing $n$ components, where the lifetimes of the 
 components are inependent random variables and each has pdf
-$f_{\gamma}(y) = \lambda e^{- \lambda y}, y > 0$
+$f_{Y}(y) = \lambda e^{- \lambda y}, y > 0$
 . Show that the average time elapsing before the first component failure occurs
 is $1/n \lambda $.}
 
@@ -78,7 +197,7 @@ $e^{r}=\sum_{k=0}^{\infty}\frac{r^{k}}{k!}$}
 
 \question{3.12.10}
 {Find $E(Y^{4})$ if $Y$ is an exponential random variable with
-$f_{\gamma}(y) = \lambda e^{- \lambda y}, y>0$
+$f_{Y}(y) = \lambda e^{- \lambda y}, y>0$
 .}
 
 
