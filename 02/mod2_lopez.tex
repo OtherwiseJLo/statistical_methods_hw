@@ -1,21 +1,3 @@
-%=======================02-713 LaTeX template, following the 15-210 template==================
-%
-% You don't need to use LaTeX or this template, but you must turn your homework in as
-% a typeset PDF somehow.
-%
-% How to use:
-%    1. Update your information in section "A" below
-%    2. Write your answers in section "B" below. Precede answers for all 
-%       parts of a question with the command "\question{n}{desc}" where n is
-%       the question number and "desc" is a short, one-line description of 
-%       the problem. There is no need to restate the problem.
-%    3. If a question has multiple parts, precede the answer to part x with the
-%       command "\part{x}".
-%    4. If a problem asks you to design an algorithm, use the commands
-%       \algorithm, \correctness, \runtime to precede your discussion of the 
-%       description of the algorithm, its correctness, and its running time, respectively.
-%    5. You can include graphics by using the command \includegraphics{FILENAME}
-%
 \documentclass[11pt]{article}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
@@ -29,9 +11,6 @@
 \setlength{\headheight}{13.6pt}
 \newcommand\question[2]{\vspace{.25in}\hrule\textbf{#1: #2}}
 \renewcommand\part[1]{\vspace{.10in}\textbf{(#1)}}
-\newcommand\algorithm{\vspace{.10in}\textbf{Algorithm: }}
-\newcommand\correctness{\vspace{.10in}\textbf{Correctness: }}
-\newcommand\runtime{\vspace{.10in}\textbf{Running time: }}
 \pagestyle{fancyplain}
 \lhead{\textbf{\NAME}}
 \chead{\textbf{HW \HWNUM}}
@@ -77,9 +56,11 @@ $
 \frac{8!}{7!1!} + 
 \frac{8!}{8!0!}
 $
-$\\ 
+\\
+$ 
 1 + 8 + 28 + 56 + 70 + 56 + 28 + 8 + 1 = 256
-$ \\
+$ 
+\\
 
 \question{2.6.26}{A new horror movie,\emph{Friday the 13th, Part X}, will star
     Jason's great-grandson (also named Jason) as a psychotic trying to dispatch
@@ -150,15 +131,17 @@ as a first-line defense against a core meltdown. Suppose a reactor has ten
 control rods, each operating independently and each having an 0.80 probability
 of being properly inserted in the event of an `incident.` Furthermore, suppose
 that a meltdown will be prevented if at least half the rods perform satisfactorily.
-What is the probability that, upon demand, the system will fail?}\\
-$\sum_{6}^{10} \binom{10}{n}(0.8)^{10-n} (0.2)^{n} = \\
+What is the probability that, upon demand, the system will fail?}
+\\
+$\sum_{6}^{10} \binom{10}{n}(0.8)^{10-n} (0.2)^{n} = 
 \binom{10}{6}(0.8)^{4} (0.2)^{6} + 
 \binom{10}{7}(0.8)^{3} (0.2)^{7} + 
 \binom{10}{8}(0.8)^{2} (0.2)^{8} + 
 \binom{10}{9}(0.8)^{1} (0.2)^{9} + 
-\binom{10}{10}(0.8)^{0} (0.2)^{10} = \\
+\binom{10}{10}(0.8)^{0} (0.2)^{10} =
 0.006369
 $
+\\
 
 
 \question{3.2.14}{The captain of a Navy gunboat orders a volley of twenty-five
