@@ -42,15 +42,40 @@ c\frac{1}{8}, c=8
 $
 
 
-\question{3.7.20}
-{For each of the following pdfs, find $f_{X}(x)$ and $f_{Y}(y)$.}
-\\
-
-\part{a}{$f_{X,Y}(x,y) = \frac{1}{2},0 \leq x \leq y \leq 2$}
-\\
-\part{b}{$f_{X,Y}(x,y) = \frac{1}{x},0 \leq y \leq x \leq 1$}
-\\
-\part{c}{$f_{X,Y}(x,y) = 6x,0 \leq x \leq 1,0 \leq y \leq 1-x$}
+% \question{3.7.20}
+% {For each of the following pdfs, find $f_{X}(x)$ and $f_{Y}(y)$.}
+% \\
+% 
+% \part{a}{$f_{X,Y}(x,y) = \frac{1}{2},0 \leq x \leq y \leq 2$}
+% \\
+% $
+% f_{X}(x)=\int \ dy
+% $
+% \\
+% $
+% f_{Y}(y)=\int \ dx
+% $
+% \\
+% \part{b}{$f_{X,Y}(x,y) = \frac{1}{x},0 \leq y \leq x \leq 1$}
+% \\
+% $
+% f_{X}(x)=\int \ dy
+% $
+% \\
+% $
+% f_{Y}(y)=\int \ dx
+% $
+% \\
+% \part{c}{$f_{X,Y}(x,y) = 6x,0 \leq x \leq 1,0 \leq y \leq 1-x$}
+% \\
+% $
+% f_{X}(x)=\int \ dy
+% $
+% \\
+% $
+% f_{Y}(y)=\int_{0}^{2} 6x \ dx
+% $
+% \\
 
 
 
@@ -142,28 +167,28 @@ f_{W}(w)
 $
 
 
-\question{3.8.10}
-{Suppose the volocity of a gas molecule of mass $m$ is a random variable with
-pdf $f_{Y}(y) = ay^{2}e^{-by^{2}},y \geq 0$, where $a$ and $b$ are positive
-constants depending on the gas. Find the pdf of the kinetic energy, 
-$W =(m/2)Y^{2}$, of such a molecule.}
-
-
-\question{3.8.12}
-{Let $X$ abd $Y$ be two independent random variables. Given the marginal pdfs
-indicated below, find the cdf of $Y/X$. \emph{Hint. Consider two cases,
-$0 \leq w \leq 1$ and $1 < w$.}}
-\\
-\part{a}{$f_{X}(x)=1,0 \leq x \leq 1$, and $f_{Y}(y)=1,0 \leq y \leq 1$}
-\\
-\part{b}{$f_{X}(x)=2x,0 \leq x \leq 1$, and $f_{Y}(y)=2y,0 \leq y \leq 1$}
-\\
-
-
-\question{3.8.13}
-{Suppose that $X$ and $Y$ are two independent random variables, where 
-$f_{X}(x) =xe^{-x},x \geq 0$ and $f_{Y}(y) = e^{-y},y \geq 0$. Find the pdf of
-$Y/X$.}
+% \question{3.8.10}
+% {Suppose the volocity of a gas molecule of mass $m$ is a random variable with
+% pdf $f_{Y}(y) = ay^{2}e^{-by^{2}},y \geq 0$, where $a$ and $b$ are positive
+% constants depending on the gas. Find the pdf of the kinetic energy, 
+% $W =(m/2)Y^{2}$, of such a molecule.}
+% 
+% 
+% \question{3.8.12}
+% {Let $X$ abd $Y$ be two independent random variables. Given the marginal pdfs
+% indicated below, find the cdf of $Y/X$. \emph{Hint. Consider two cases,
+% $0 \leq w \leq 1$ and $1 < w$.}}
+% \\
+% \part{a}{$f_{X}(x)=1,0 \leq x \leq 1$, and $f_{Y}(y)=1,0 \leq y \leq 1$}
+% \\
+% \part{b}{$f_{X}(x)=2x,0 \leq x \leq 1$, and $f_{Y}(y)=2y,0 \leq y \leq 1$}
+% \\
+% 
+% 
+% \question{3.8.13}
+% {Suppose that $X$ and $Y$ are two independent random variables, where 
+% $f_{X}(x) =xe^{-x},x \geq 0$ and $f_{Y}(y) = e^{-y},y \geq 0$. Find the pdf of
+% $Y/X$.}
 
 
 \question{3.9.5}
@@ -171,30 +196,71 @@ $Y/X$.}
 $E(X_{i}) = \mu \neq 0,i=1,2,...,n$. Under what conditions will the following
 be true?\\
 $E(\sum_{i=1}^{n} a_{i} X_{i}) = \mu$}
+\\
+Knowing that $E(X_{i})=\mu$:
+\\
+$
+E(\sum_{i=1}^{n}a_iX_{i})
+=
+E(X_{i}\sum_{i=1}^{n}a_i)
+$
+\\
+\bf{If $\sum_{i=1}^{n}a_i=1$, then:}
+\\
+$
+E(X_{i}\sum_{i=1}^{n}a_i)
+=
+E(X_{i})
+=
+\mu
+$
+
 
 
 \question{3.9.8}
 {Suppose two fair dice are tossed. Find the expected value of the product of the
 faces showing.}
+\\
+$X=X_{1}X_{2}$
+\\
+$p_{X_{i}}(k)=\frac{1}{6} ,k=1,2,3,4,5,6$
+\\
+$E(X_{i}) 
+= 
+\sum_{k=1}^{6}\frac{k}{6}
+=
+\frac{1}{6}\sum_{k=1}^{6}k
+= 
+\frac{6*7/2}{6}
+=
+3.5
+$
+\\
+$E(X)=E(X_{1})E(X_{2})=(3.5)^{2}=12.25$
+
 
 
 \question{3.11.4}
 {Five cards are dealt from a standard poker deck. Let $X$ be the number of aces
 received, and $Y$ the number of kings. Compute $P(X = 2|Y=2)$.}
+\\
+$
+P(X = 2|Y=2)=\frac{\big[\binom{52}{4}\binom{4}{2}\big]\big[\binom{52}{4}\binom{4}{2}\big]}{\binom{52}{5}}
+$
 
 
-\question{3.11.16}
-{Suppose that $X$ and $Y$ are distributed according to the joint pdf \\
-$f_{X,Y}(x,y) = \frac{2}{5} \dot (2x + 3y), 0 \leq x\leq 1, 0 \leq y \leq 1$ \\
-Find
-}
-\\
-
-\part{a}{$f_X(x)$}
-\\
-\part{b}{$P(X>2Y)$}
-\\
-\part{c}{$P(Y>1|X>\frac{1}{2}$}
+% \question{3.11.16}
+% {Suppose that $X$ and $Y$ are distributed according to the joint pdf \\
+% $f_{X,Y}(x,y) = \frac{2}{5} \dot (2x + 3y), 0 \leq x\leq 1, 0 \leq y \leq 1$ \\
+% Find
+% }
+% \\
+% 
+% \part{a}{$f_X(x)$}
+% \\
+% \part{b}{$P(X>2Y)$}
+% \\
+% \part{c}{$P(Y>1|X>\frac{1}{2}$}
 
 
 
