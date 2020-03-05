@@ -1,0 +1,213 @@
+%=======================02-713 LaTeX template, following the 15-210 template==================
+%
+% You don't need to use LaTeX or this template, but you must turn your homework in as
+% a typeset PDF somehow.
+%
+% How to use:
+%    1. Update your information in section "A" below
+%    2. Write your answers in section "B" below. Precede answers for all 
+%       parts of a question with the command "\question{n}{desc}" where n is
+%       the question number and "desc" is a short, one-line description of 
+%       the problem. There is no need to restate the problem.
+%    3. If a question has multiple parts, precede the answer to part x with the
+%       command "\part{x}".
+%    4. If a problem asks you to design an algorithm, use the commands
+%       \algorithm, \correctness, \runtime to precede your discussion of the 
+%       description of the algorithm, its correctness, and its running time, respectively.
+%    5. You can include graphics by using the command \includegraphics{FILENAME}
+%
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\lstset{language=Python,
+}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\setlength{\headheight}{13.6pt}
+\newcommand\question[2]{\vspace{.25in}\hrule\textbf{#1: #2}}
+\renewcommand\part[1]{\vspace{.10in}\textbf{(#1)}}
+\newcommand\algorithm{\vspace{.10in}\textbf{Algorithm: }}
+\newcommand\correctness{\vspace{.10in}\textbf{Correctness: }}
+\newcommand\runtime{\vspace{.10in}\textbf{Running time: }}
+\pagestyle{fancyplain}
+\lhead{\textbf{\NAME}}
+\chead{\textbf{HW \HWNUM}}
+\rhead{\today}
+\begin{document}\raggedright
+%Section A==============Change the values below to match your information==================
+\newcommand\NAME{Jonathan Lopez}  % your name
+\newcommand\HWNUM{2}              % the homework number
+%Section B==============Put your answers to the questions below here=======================
+
+% no need to restate the problem --- the graders know which problem is which,
+% but replacing "The First Problem" with a short phrase will help you remember
+% which problem this is when you read over your homeworks to study.
+
+\question{2.6.2} {A coded message from a CIA operative to his Russian KGB counterpart
+is to be sent in the form Q4ET, where the first and last entries must be consonants;
+the second, an integer 1 through 9; and the third, one of the 6 vowels. How many
+different ciphers can be transmitted?}\\
+20*9*6*20=21600
+
+\question{2.6.6}{A fast-food restaurant offers customers a choice of eight
+toppings that can be added to a hamburger. How many hamburgers can be ordered?}\\
+You can order a hamburger with anywhere between 0 and 8 toppings:
+$
+\binom{8}{0}+
+\binom{8}{1}+
+\binom{8}{2}+
+\binom{8}{3}+
+\binom{8}{4}+
+\binom{8}{5}+
+\binom{8}{6}+
+\binom{8}{7}+
+\binom{8}{8}
+$ \\
+$
+\frac{8!}{0!8!} + 
+\frac{8!}{1!7!} + 
+\frac{8!}{2!6!} + 
+\frac{8!}{3!5!} + 
+\frac{8!}{4!4!} + 
+\frac{8!}{5!3!} + 
+\frac{8!}{6!2!} + 
+\frac{8!}{7!1!} + 
+\frac{8!}{8!0!}
+$
+$\\ 
+1 + 8 + 28 + 56 + 70 + 56 + 28 + 8 + 1 = 256
+$ \\
+
+\question{2.6.26}{A new horror movie,\emph{Friday the 13th, Part X}, will star
+    Jason's great-grandson (also named Jason) as a psychotic trying to dispatch
+(as gruesomely as possible) eight camp counselors, four men and four women.}
+\\ \part{a}{How many scenarios (i.e., victim orers) can the screenwriters devise,
+assuming they want Jason to do away with all the men before going after any of the
+women?} \\
+$4!*4!=576$
+\\ \part{b}{How many scripts are possible if the only restriction imposed on Jason
+is that he save Muffy for last?} \\
+$7!=5040$
+
+\question{2.6.38}{How many ways can the letters in the word \\
+\emph{SLUMGULLION} \\
+be arranged so that the three L's precede all other consonants?}\\
+$
+\frac{11!}{4!3!4!} + 
+\frac{11!}{3!3!5!} + 
+\frac{11!}{2!3!6!} + 
+\frac{11!}{1!3!7!} + 
+\frac{11!}{3!8!}
+=
+11550 + 9240 + 4620 + 1320 + 165 = 26895
+$
+
+
+\question{2.6.52}{A boat has a crew of eight: Two of those eight can row only
+on the stroke side, while three can row only on the bow side. In how may ways
+can the two sides of the boat be manned?}\\
+Of the remaining 3 crew members, they can be distributed on either side
+in $\frac{3!}{2!1!}=3$ ways. \\
+Each side can be manned $ 4! $ ways. \\
+There are a total of $3*4!*4! = 1728$ ways to man the boat.
+
+\question{2.7.2}{An urn contains six chips, numbered 1 through 6. Two are chosen
+at random and their numbers are added together. What is the probability that the
+resulting sum is equal to 5?}\\
+$
+S = \{
+(1,4)
+(2,3)
+(3,2)
+(4,1)
+\}
+$
+\\
+$\frac{N (S)}{_{6}P_{2}} = \frac{4}{\frac{6!}{4!}} = \frac{4}{30} = 0.1\overline{3}$
+
+
+\question{2.7.12}{If the letters in the phrase \\
+\emph{A ROLING STONE GATHERS NO MOSS} \\
+are arranged at random, what are the chances that not all the S's will be adjacent?}\\
+If we consider \emph{SSSS} as a single letter, then the phrase has only $ (25-4+1)$ letters:
+\\
+$
+1 - \frac{4!(25-4+1)!}{25!} = 
+1 - \frac{4!22!}{25!} = 
+1 - \frac{1}{25*23} =
+1 - 0.00174 = 0.99826
+$
+
+
+
+\question{3.2.2}{In a nuclear reactor, the fission process is controlled by 
+inserting special rods into the radioactive core to absorb neutrons and slow
+down the nuclear chain rection. When functioning properly, these rods serve
+as a first-line defense against a core meltdown. Suppose a reactor has ten 
+control rods, each operating independently and each having an 0.80 probability
+of being properly inserted in the event of an `incident.` Furthermore, suppose
+that a meltdown will be prevented if at least half the rods perform satisfactorily.
+What is the probability that, upon demand, the system will fail?}\\
+$\sum_{6}^{10} \binom{10}{n}(0.8)^{10-n} (0.2)^{n} = \\
+\binom{10}{6}(0.8)^{4} (0.2)^{6} + 
+\binom{10}{7}(0.8)^{3} (0.2)^{7} + 
+\binom{10}{8}(0.8)^{2} (0.2)^{8} + 
+\binom{10}{9}(0.8)^{1} (0.2)^{9} + 
+\binom{10}{10}(0.8)^{0} (0.2)^{10} = \\
+0.006369
+$
+
+
+\question{3.2.14}{The captain of a Navy gunboat orders a volley of twenty-five
+missiles to be fired at random along a five-hundred-foot stretch of shoreline that
+he hopes to establish as a beachhead. Dug into the beach is a thirty-foot-long
+bunker serving as the enemy's first line of defense. The captain has reason to
+believe that the bunker will be destroyed if at least three of the missles are
+on-target. What is the probability of that happening?} \\
+$\sum_{3}^{25}\binom{25}{n}(\frac{30}{500})^{n} (\frac{470}{500})^{25-n} =
+1-\sum_{0}^{2}\binom{25}{n}(\frac{30}{500})^{n} (\frac{470}{500})^{25-n}$ 
+\\ .\\
+$ 1- (
+\binom{25}{0} (0.06)^{0} * (0.94)^{25} +
+\binom{25}{1} (0.06)^{1} * (0.94)^{24} +
+\binom{25}{2} (0.06)^{2} * (0.94)^{23})
+= 1 - 0.8129 = 0.1871
+$
+
+\question{3.2.20}{A corporate board contains twelve members. The board decides
+to create a five-person Committee to Hide Corporate Debt. Suppose four members
+of the board are accountants. What is the probability that the Committee will
+contain two accountants and three nonaccountants?}\\
+$\frac{\binom{4}{2} \binom{8}{3}}{\binom{12}{5}} = 
+\frac{6*56}{792} = 0.\overline{42}$
+
+\question{Simulation}{Consider a Baseball World Series (best of 7 game series) in which team A theoretically
+    has a 0.55 chance of winning each game against team B. Simulate the probability that team A
+    would win a World Series against team B by simulating 1000 World Series. You many use any
+software to conduct the simulation. }
+
+\begin{lstlisting}
+# Using Python for simulation
+from random import random
+
+
+def world_series(a, b):
+    chances = ['A']*a, ['B']*b
+    games = []
+    while True:
+        games += sample(chances, 1)
+        if (len([x for x in games if x == 'A']) == 7):
+            return 'A'
+        if (len([x for x in games if x == 'B']) == 7):
+            return 'B'
+
+
+nSeries = 1000
+series = [world_series(55,45) for x in range(1000)]
+result = len([x for x in series if x == 'A'])/nSeries
+# Result = 0.644
+\end{lstlisting}
+\end{document}
